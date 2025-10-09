@@ -17,10 +17,6 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/zinit/polaris/bin:$PATH"
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=6000  # 60 seconds
-
 # Editor preferences
 export EDITOR="vim"
 export VISUAL="vim"
@@ -171,6 +167,53 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Source custom shell configurations and aliases
 [[ -f /data/data/com.termux/files/home/.shell_rc_content ]] && source /data/data/com.termux/files/home/.shell_rc_content
 [[ -f /data/data/com.termux/files/home/.aliases ]] && source /data/data/com.termux/files/home/.aliases
+
+# Enable vi mode
+bindkey -v
+export KEYTIMEOUT=6000  # 60 seconds
+
+# Powerlevel10k vi mode cursor
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_CURSOR='\e[2 q'
+typeset -g POWERLEVEL9K_VI_MODE_INSERT_CURSOR='\e[6 q'
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=green
+typeset -g POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=red
+typeset -g POWERLEVEL9K_VI_MODE_NORMAL_PROMPT_PREFIX='NORMAL '
+typeset -g POWERLEVEL9K_VI_MODE_INSERT_PROMPT_PREFIX='INSERT '
+
+# Enable searching through history
+bindkey '^R' history-incremental-pattern-search-backward
+
+# Edit line in vim buffer ctrl-v
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^v' edit-command-line
+# Enter vim buffer from normal mode
+autoload -U edit-command-line && zle -N edit-command-line && bindkey -M vicmd "^v" edit-command-line
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'left' vi-backward-char
+bindkey -M menuselect 'down' vi-down-line-or-history
+bindkey -M menuselect 'up' vi-up-line-or-history
+bindkey -M menuselect 'right' vi-forward-char
+# Fix backspace bug when switching modes
+bindkey "^?" backward-delete-char
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
