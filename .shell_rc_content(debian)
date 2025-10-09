@@ -1,5 +1,6 @@
 # Zoxide as cd
 eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init bash)"
 
 # FZF color scheme (Monokai/Molokai theme)
 export FZF_DEFAULT_OPTS=" \
