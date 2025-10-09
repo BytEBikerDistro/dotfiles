@@ -1,0 +1,79 @@
+# Zoxide as cd
+eval "$(zoxide init --cmd cd zsh)"
+
+# FZF color scheme (Monokai/Molokai theme)
+export FZF_DEFAULT_OPTS=" \
+  --color=bg:#272822,bg+:#3e3d32,spinner:#f92672,hl:#fd971f \
+  --color=fg:#f8f8f2,header:#75715e,info:#66d9ef,pointer:#ae81ff \
+  --color=marker:#f92672,fg+:#f8f8f2,prompt:#a6e22e,hl+:#fd971f \
+  --color=selected-bg:#49483e \
+  --color=border:#75715e,label:#f8f8f2"
+
+# Custom sudo function to redirect apt to apt_wrapper
+sudo() {
+    if [[ "$1" == "apt" ]]; then
+        shift  # Remove 'apt' from arguments
+        apt_wrapper "$@"
+    else
+        command sudo "$@"
+    fi
+}
+
+# NALA wrapper for apt
+apt_wrapper() {
+    # Check if sudo is installed
+    if ! command -v sudo >/dev/null 2>&1; then
+        echo "Error: sudo not found. Please install sudo or run as root."
+        return 1
+    fi
+
+    # Check if nala is installed, fall back to apt if not
+    if ! command -v nala >/dev/null 2>&1; then
+        echo "Warning: nala not found, falling back to apt."
+        command sudo apt "$@"
+        return $?
+    fi
+
+    # If no arguments provided, run nala's help menu
+    if [[ -z "$1" ]]; then
+        command sudo nala
+        return
+    fi
+
+    local cmd="$1"
+    shift
+
+    # Map apt commands to nala equivalents
+    case "$cmd" in
+        install|in|add)
+            command sudo nala install "$@"
+            ;;
+        search|se*|sr|find)
+            command sudo nala search "$@"
+            ;;
+        update|up)
+            command sudo nala update "$@"
+            ;;
+        upgrade|upg*)
+            command sudo nala upgrade "$@"
+            ;;
+        show|info)
+            command sudo nala show "$@"
+            ;;
+        clean|cl*)
+            command sudo nala clean "$@"
+            ;;
+        autopurge|ap)
+            command sudo nala autopurge "$@"
+            ;;
+        remove|un*|rm|del*|r)
+            command sudo nala remove "$@"
+            ;;
+        list-up*)
+            command sudo nala list --upgradable
+            ;;
+        *)
+            command sudo nala "$cmd" "$@"
+            ;;
+    esac
+}
