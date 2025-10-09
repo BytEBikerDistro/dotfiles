@@ -25,6 +25,8 @@ set nolist                    " Disable list mode
 set textwidth=0               " Disable automatic line breaking
 set wrapmargin=0              " Disable wrap margin
 let mapleader = " "           " Set leader key to space
+set termguicolors             " Enable true colors for better theme support
+set hidden                    " Allow switching buffers without saving
 
 " ========================
 " === KEY MAPPINGS ===
@@ -34,6 +36,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Show relative line numbers
+nnoremap <leader>r :set relativenumber!<CR>
 
 " Clear search highlights
 nnoremap <leader>c :nohlsearch<CR>
@@ -92,7 +97,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Theme
-Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 " File explorer
 Plug 'preservim/nerdtree'
 " Status bar
@@ -115,7 +120,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " ========================
 " === THEME SETTINGS ===
 " ========================
-colorscheme gruvbox
-let g:airline_theme = 'gruvbox'
+colorscheme molokai
 set background=dark
 
