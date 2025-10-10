@@ -19,8 +19,6 @@ map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 map("i", "<C-s>", "<Esc><Cmd>write<CR>", { noremap = true, silent = true, desc = "Save and exit insert mode" })
 map("n", "<C-s>", "<Cmd>write<CR>", { noremap = true, silent = true, desc = "Save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy whole file to clipboard" })
-map('n', '<leader>sc', ':close<CR>', { desc = 'Close window', silent = true })
-map('n', '<leader>so', ':only<CR>', { desc = 'Close other windows', silent = true })
 
 -- ============ 󰛔 Search, Replace & Highlight =============
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear search highlights" })
@@ -119,6 +117,8 @@ map("n", "<leader>sv", "<cmd>vsp<cr>", { noremap = true, silent = true, desc = "
 map("n", "<leader>sh", "<cmd>sp<cr>", { noremap = true, silent = true, desc = "Horizontal split" })
 map("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
 map("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+map('n', '<leader>sc', ':close<CR>', { desc = 'Close window', silent = true })
+map('n', '<leader>so', ':only<CR>', { desc = 'Close other windows', silent = true })
 
 -- ============  Git Integration =============
 map("n", "dv", ":DiffviewOpen<CR>", { desc = "Open Git diff view" })
