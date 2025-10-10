@@ -19,6 +19,8 @@ map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 map("i", "<C-s>", "<Esc><Cmd>write<CR>", { noremap = true, silent = true, desc = "Save and exit insert mode" })
 map("n", "<C-s>", "<Cmd>write<CR>", { noremap = true, silent = true, desc = "Save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy whole file to clipboard" })
+map('n', '<leader>sc', ':close<CR>', { desc = 'Close window', silent = true })
+map('n', '<leader>so', ':only<CR>', { desc = 'Close other windows', silent = true })
 
 -- ============ 󰛔 Search, Replace & Highlight =============
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear search highlights" })
