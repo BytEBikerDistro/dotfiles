@@ -9,6 +9,10 @@ map("i", "<C-l>", "<Right>", { desc = "Move right" })
 map("i", "<C-j>", "<Down>", { desc = "Move down" })
 map("i", "<C-k>", "<Up>", { desc = "Move up" })
 
+-- ============  Swap ; & : For Easier Command Entry =============
+map('n', ';', ':', { desc = 'Enter command mode' })
+map('n', ':', ';', { desc = 'Repeat f, t, F or T' })
+
 -- ============  Window Navigation =============
 map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
