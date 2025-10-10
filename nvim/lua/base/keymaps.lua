@@ -111,6 +111,7 @@ end, { desc = "Toggle Treesitter Context" })
 map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 map("n", "<leader>x", "<cmd>Bdelete!<CR>", { desc = "Close buffer", noremap = true, silent = true })
+map('n', '<leader>bn', ':enew<CR>', { desc = 'New buffer', silent = true })
 
 -- ============  Splits =============
 map("n", "<leader>sv", "<cmd>vsp<cr>", { noremap = true, silent = true, desc = "Vertical split" })
