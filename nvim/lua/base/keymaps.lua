@@ -24,6 +24,14 @@ map("i", "<C-s>", "<Esc><Cmd>write<CR>", { noremap = true, silent = true, desc =
 map("n", "<C-s>", "<Cmd>write<CR>", { noremap = true, silent = true, desc = "Save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "Copy whole file to clipboard" })
 
+-- ============  Termux Clipboard =============
+if vim.fn.executable('termux-clipboard-set') == 1 then
+  -- Copy selection to Android clipboard
+  keymap('v', '<leader>y', ':w !termux-clipboard-set<CR>', { desc = 'Copy to termux clipboard', silent = true })
+  -- Paste from Android clipboard
+  keymap('n', '<leader>p', ':r !termux-clipboard-get<CR>', { desc = 'Paste from termux clipboard', silent = true })
+end
+
 -- ============ 󰛔 Search, Replace & Highlight =============
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear search highlights" })
 map({ "n", "v" }, "<leader>sr", function()
