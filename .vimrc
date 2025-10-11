@@ -184,5 +184,5 @@ let g:vimspector_enable_mappings = 'HUMAN'
 colorscheme sonokai
 let g:sonokai_style = 'andromeda'
 " let g:sonokai_style = 'atlantis'
-let g:sonokai_enable_italic = 1
+" let g:sonokai_enable_italic = 1
 set background=dark
