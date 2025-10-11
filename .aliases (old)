@@ -13,13 +13,14 @@ alias la='eza --icons -a'
 alias ll='eza --icons -lah'
 alias lt='eza --icons --tree'
 alias lta='eza --icons --tree -lah'
-alias preview="fzf --preview='bat --color=always --style=numbers --theme=\"Monokai Extended\" {}' --preview-window=down"
-alias fvim='vim $(fzf -m --preview="bat --color=always --style=numbers --theme=\"Monokai Extended\" {}" --preview-window=down)'
+alias preview="fzf --preview='bat --color=always --style=numbers --theme=OneHalfDark {}' --preview-window=down"
+alias fnvim='nvim $(fzf -m --preview="bat --color=always --style=numbers --theme=OneHalfDark {}" --preview-window=down)'
+alias fvim='vim $(fzf -m --preview="bat --color=always --style=numbers --theme=OneHalfDark {}" --preview-window=down)'
 alias fcd="cd \$(find . -type d | fzf)"
 if command -v batcat &>/dev/null; then
-    alias cat='batcat --theme="Monokai Extended"'
+    alias cat='batcat --theme=OneHalfDark'
 else
-    alias cat='bat --theme="Monokai Extended"'
+    alias cat='bat --theme=OneHalfDark
 fi
 alias psu="ps aux"
 alias psg="ps aux | grep -i" # Usage: psg process_name
