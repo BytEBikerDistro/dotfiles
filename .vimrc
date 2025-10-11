@@ -181,5 +181,8 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let g:vimspector_enable_mappings = 'HUMAN'
 
 " Theme
+colorscheme sonokai
+let g:sonokai_style = 'andromeda'  
+" or 'atlantis'
+let g:sonokai_enable_italic = 1
 set background=dark
-colorscheme molokai
