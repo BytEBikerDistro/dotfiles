@@ -18,10 +18,16 @@ apt install git -y
 #### termux dependencies
 
 ```
-apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl diffutils eza file findutils fzf git grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssh openssl p7zip procps python sed tar termux-api unrar unzip vim xz-utils zoxide zsh zstd
+apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-editor diffutils eza file findutils fzf git grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssh openssl p7zip procps python sed tar termux-api unrar unzip uuid-utils vim xz-utils zoxide zsh zstd
 
 ```
 
+#### install gogh color schemes
+
+```
+bash -c "$(wget -qO- https://git.io/vQgMr)"
+
+```
 
 #### install nerd fonts
 
@@ -41,7 +47,7 @@ apt install -y xfce4 xfce4-appfinder xfce4-battery-plugin xfce4-clipman-plugin x
 #### debian dependencies
 
 ```
-sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl diffutils eza file findutils fzf git grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 sed tar unace unrar-free unzip vim xz-utils zoxide zsh zstd
+sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils eza file findutils fzf git grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 sed tar unace unrar-free unzip uuid-runtime vim xz-utils zoxide zsh zstd
 
 ```
 #### install libreoffice in debian
