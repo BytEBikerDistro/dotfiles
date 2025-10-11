@@ -149,7 +149,7 @@ Plug 'jiangmiao/auto-pairs'
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 " Theme
-Plug 'tomasr/molokai'
+Plug 'sainnhe/sonokai'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
