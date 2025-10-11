@@ -1,13 +1,8 @@
 # Zoxide as cd
 eval "$(zoxide init --cmd cd zsh)"
 
-# FZF color scheme (Monokai/Molokai theme)
-export FZF_DEFAULT_OPTS=" \
-  --color=bg:#272822,bg+:#3e3d32,spinner:#f92672,hl:#fd971f \
-  --color=fg:#f8f8f2,header:#75715e,info:#66d9ef,pointer:#ae81ff \
-  --color=marker:#f92672,fg+:#f8f8f2,prompt:#a6e22e,hl+:#fd971f \
-  --color=selected-bg:#49483e \
-  --color=border:#75715e,label:#f8f8f2"
+# FZF color scheme (TokyoNight theme)
+export FZF_DEFAULT_OPTS=" --color=bg:#1a1b26,bg+:#24283b,spinner:#bb9af7,hl:#f7768e --color=fg:#c0caf5,header:#7aa2f7,info:#7dcfff,pointer:#7aa2f7 --color=marker:#9ece6a,fg+:#a9b1d6,prompt:#e0af68,hl+:#ff7aa1 --color=selected-bg:#414868 --color=border:#565f89,label:#c0caf5"
 
 # NALA wrapper for apt
 apt_wrapper() {
