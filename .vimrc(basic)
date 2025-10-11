@@ -98,7 +98,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Theme
-Plug 'tomasr/molokai'
+Plug 'sainnhe/sonokai'
 " File explorer
 Plug 'preservim/nerdtree'
 " Status bar
@@ -121,6 +121,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " ========================
 " === THEME SETTINGS ===
 " ========================
-colorscheme molokai
+colorscheme sonokai
+let g:sonokai_style = 'andromeda'  
+" or 'atlantis'
+let g:sonokai_enable_italic = 1
 set background=dark
 
