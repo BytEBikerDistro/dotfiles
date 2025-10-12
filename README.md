@@ -12,7 +12,6 @@ apt install pulseaudio -y
 apt install proot-distro -y
 apt install wget -y
 apt install git -y
-
 ```
 
 #### termux dependencies
