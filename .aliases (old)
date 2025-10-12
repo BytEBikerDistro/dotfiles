@@ -3,25 +3,33 @@
 ####################################################################
 alias q="exit"
 alias c="clear"
-alias f="find . | grep "
+alias h='~'
+alias f="find . | grep -i "
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias cp='cp -rfiv'
 alias rm='rm -rfIv'
+alias ..='cd ..'
+alias st='cd ~/storage/shared'
+alias ds='cd ~/storage/shared/Documents'
+alias dl='cd ~/storage/shared/Download'
 alias ls='eza --icons'
 alias la='eza --icons -a'
 alias ll='eza --icons -lah'
 alias lt='eza --icons --tree'
 alias lta='eza --icons --tree -lah'
-alias preview="fzf --preview='bat --color=always --style=numbers --theme=Dracula {}' --preview-window=down"
-alias fnvim='nvim $(fzf -m --preview="bat --color=always --style=numbers --theme=Dracula {}" --preview-window=down)'
-alias fvim='vim $(fzf -m --preview="bat --color=always --style=numbers --theme=Dracula {}" --preview-window=down)'
-alias fcd="cd \$(find . -type d | fzf)"
+alias lp="fzf --preview='bat --color=always --style=numbers --theme=Dracula {}' --preview-window=down"
+alias fn='nvim $(fzf -m --preview="bat --color=always --style=numbers --theme=Dracula {}" --preview-window=down)'
+alias fv='vim $(fzf -m --preview="bat --color=always --style=numbers --theme=Dracula {}" --preview-window=down)'
+alias fd="cd \$(find . -type d | fzf)"
 if command -v batcat &>/dev/null; then
     alias cat='batcat --theme=Dracula'
 else
-    alias cat='bat --theme=Dracula
+    alias cat='bat --theme=Dracula'
 fi
+alias vi='vim'
+alias vim='nvim'
+alias nv='nvim'
 alias psu="ps aux"
 alias psg="ps aux | grep -i" # Usage: psg process_name
 alias kill9="kill -9"
