@@ -3,15 +3,16 @@
 ####################################################################
 alias q="exit"
 alias c="clear"
+alias h='~'
 alias f="find . | grep -i "
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias cp='cp -rfiv'
 alias rm='rm -rfIv'
 alias ..='cd ..'
-alias st='cd /storage/shared'
-alias ds='cd /storage/shared/Documents'
-alias dl='cd /storage/shared/Download'
+alias st='cd ~/storage/shared'
+alias ds='cd ~/storage/shared/Documents'
+alias dl='cd ~/storage/shared/Download'
 alias ls='eza --icons'
 alias la='eza --icons -a'
 alias ll='eza --icons -lah'
