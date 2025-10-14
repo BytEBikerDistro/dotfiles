@@ -165,7 +165,7 @@ unset ZI_REPO ZI_REPO
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Source custom shell configurations and aliases
-[[ -f /data/data/com.termux/files/home/.shell_rc_content ]] && source /data/data/com.termux/files/home/.shell_rc_content
+[[ -f /data/data/com.termux/files/home/.shell_rc ]] && source /data/data/com.termux/files/home/.shell_rc
 [[ -f /data/data/com.termux/files/home/.aliases ]] && source /data/data/com.termux/files/home/.aliases
 
 # Enable vi mode
