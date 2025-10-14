@@ -31,9 +31,9 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-# Source the .shell_rc_content file
-if [ -f ~/.shell_rc_content ]; then
-    . ~/.shell_rc_content
+# Source the .shell_rc file
+if [ -f ~/.shell_rc ]; then
+    . ~/.shell_rc
 fi
 
 # Enable programmable completion features
