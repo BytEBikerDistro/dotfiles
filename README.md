@@ -12,6 +12,7 @@ apt install pulseaudio -y
 apt install proot-distro -y
 apt install wget -y
 apt install git -y
+apt install termux-api -y
 termux-wake-lock
 termux-setup-storage
 ```
@@ -19,7 +20,7 @@ termux-setup-storage
 #### termux dependencies
 
 ```bash
-apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-editor diffutils eza fd file findutils fzf git grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssh openssl p7zip procps python ripgrep sed tar termux-api unrar unzip uuid-utils vim xz-utils zoxide zsh zstd
+apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-editor diffutils eza fd file findutils fzf git grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssh openssl p7zip procps python ripgrep sed tar unrar unzip uuid-utils vim xz-utils zoxide zsh zstd
 ```
 
 #### install gogh color schemes
