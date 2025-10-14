@@ -160,7 +160,7 @@ unset ZI_REPO
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Source custom shell configurations and aliases
-[[ -f $HOME/.shell_rc_content ]] && source $HOME/.shell_rc_content
+[[ -f $HOME/.shell_rc ]] && source $HOME/.shell_rc
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
 
 # Enable vi mode
