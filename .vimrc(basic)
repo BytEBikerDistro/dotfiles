@@ -4,8 +4,8 @@
 set nocompatible              " Disable compatibility with vi
 set number                    " Show line numbers
 set relativenumber            " Show relative line numbers
-set tabstop=5                 " Number of spaces per tab
-set shiftwidth=5              " Number of spaces for auto-indent
+set tabstop=4                 " Number of spaces per tab
+set shiftwidth=4              " Number of spaces for auto-indent
 set expandtab                 " Convert tabs to spaces
 set autoindent                " Copy indent from current line
 set smartindent               " Smart auto-indentation
