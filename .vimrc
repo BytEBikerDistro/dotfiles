@@ -90,15 +90,7 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Code actions and formatting
 nmap <leader>ca <Plug>(coc-codeaction)
-nmap <leader>f :CocCommand prettier.formatFile<CR>
-
-" Debugging (vimspector)
-nmap <leader>dd :VimspectorReset<CR>
-nmap <leader>db :call vimspector#ToggleBreakpoint()<CR>
-nmap <leader>dc :call vimspector#Continue()<CR>
-nmap <leader>ds :call vimspector#StepInto()<CR>
-nmap <leader>do :call vimspector#StepOver()<CR>
-nmap <leader>dr :call vimspector#RunToCursor()<CR>
+nmap <leader>fm :CocCommand prettier.formatFile<CR>
 
 " Function to show documentation (like VS Code hover)
 function! s:show_documentation()
@@ -161,9 +153,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 " Code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Debugging
-Plug 'puremourning/vimspector'
-call plug#end()
 
 " ========================
 " === PLUGIN CONFIG ===
@@ -182,10 +171,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " fzf.vim
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-
-" vimspector
-let g:vimspector_enable_mappings = 'HUMAN'
-let g:vimspector_sidebar_width = 50
 
 " Theme
 colorscheme tokyonight
