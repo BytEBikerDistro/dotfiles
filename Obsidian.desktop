@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Obsidian
+Comment=Markdown Knowledge Base
+Exec=/home/debian13/.local/bin/obsidian --no-sandbox
+Icon=/home/debian13/.local/share/obsidian/resources/icon.png
+Terminal=false
+Type=Application
+Categories=Utility;Office;
+StartupNotify=true
+Path=
