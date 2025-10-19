@@ -45,7 +45,7 @@ apt install -y xfce4 xfce4-appfinder xfce4-battery-plugin xfce4-clipman-plugin x
 #### debian dependencies
 
 ```bash
-sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils eza file findutils fzf git gnome-keyring gnome-keysign grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 ripgrep sed tar unace unrar-free unzip uuid-runtime vim xz-utils xdg-utils zoxide zsh zstd
+sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog eza file findutils fzf git gnome-keyring gnome-keysign grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 ripgrep sed tar unace unrar-free unzip uuid-runtime vim xz-utils xdg-utils zoxide zsh zstd
 ```
 
 #### install libreoffice in debian
