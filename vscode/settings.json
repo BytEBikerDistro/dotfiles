@@ -1,71 +1,114 @@
 {
   // =========================
   // ======= VIM OPTS ========
-  // ========================
+  // =========================
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<Esc>"],
-      "when": ["editorFocus"],
       "commands": [":nohl"],
       "silent": true
-    }
+    },
+    // Swap ; and :
+    { "before": [";"], "after": [":"] },
+    { "before": [":"], "after": [";"] }
   ],
+
   "vim.visualModeKeyBindings": [
-    {
-      "before": ["p"],
-      "after": ["P"]
-    }
+    // Keep selection after indenting
+    { "before": ["<"], "after": ["<", "g", "v"] },
+    { "before": [">"], "after": [">", "g", "v"] },
+    // Paste without overwriting register
+    { "before": ["p"], "after": ["P"] }
   ],
+
+  // Handle keys manually in VSCode
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
   },
+
   "vim.incsearch": true,
-  "vim.searchHighlightColor": "#f6ff0080",
-  "vim.searchHighlightTextColor": "#fff",
+  "vim.hlsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
   "vim.highlightedyank.enable": true,
   "vim.smartRelativeLine": true,
   "vim.surround": true,
   "vim.easymotion": true,
+  "vim.searchHighlightColor": "#f6ff0080",
+  "vim.searchHighlightTextColor": "#fff",
+
+  // 🧱 VSCodeVim performance affinity
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
-  // ======================
-  // ======= THEME ========
-  // ======================
-  "breadcrumbs.enabled": false,
-  "breadcrumbs.symbolPath": "off",
-  "breadcrumbs.icons": false,
-  "window.title": " ",
+
+  // ============================================================
+  // 🖌️ APPEARANCE & UI
+  // ============================================================
   "window.zoomLevel": 2,
-  "workbench.tree.indent": 10,
+  "window.menuBarVisibility": "compact",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.navigationControl.enabled": false,
   "workbench.tips.enabled": false,
+  "workbench.layoutControl.enabled": false,
   "workbench.remoteIndicator.showExtensionRecommendations": false,
   "extensions.ignoreRecommendations": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.scrollbar.verticalScrollbarSize": 12,
-  "editor.hover.sticky": false,
-  "editor.stickyScroll.enabled": false,
-  "terminal.integrated.stickyScroll.enabled": false,
-  "workbench.tree.enableStickyScroll": false,
-  "editor.cursorBlinking": "expand",
-  "editor.fontSize": 19,
-  "editor.lineHeight": 31,
+
+  // ============================================================
+  // 📂 EXPLORER & BREADCRUMBS
+  // ============================================================
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.filePath": "off",
+  "breadcrumbs.icons": false,
+
+  // ============================================================
+  // 🧠 SECURITY & TRUST
+  // ============================================================
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.promptForRemoteFileProtocolHandling": false,
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ============================================================
+  // 📊 TELEMETRY & FEEDBACK
+  // ============================================================
+  "telemetry.editStats.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+
+  // ============================================================
+  // ✏️ EDITOR SETTINGS
+  // ============================================================
   "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 19,
   "editor.fontWeight": "bold",
   "editor.fontLigatures": true,
+  "editor.bracketPairColorization.enabled": true,
   "editor.wordWrap": "on",
-  "editor.overviewRulerBorder": false,
+  "editor.lightbulb.enabled": "on",
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
+  "editor.cursorBlinking": "smooth",
+  "editor.scrollbar.vertical": "hidden",
   "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Tokyo Storm Gogh",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontWeight": "bold",
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "editor.hover.sticky": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.overviewRulerBorder": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.hover.enabled": false,
+
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -109,59 +152,44 @@
       }
     ]
   },
-  "zenMode.hideStatusBar": false,
-  "window.density.editorTabHeight": "compact",
-  "workbench.editor.showTabs": "multiple",
-  "window.commandCenter": true,
-  "zenMode.fullScreen": true,
-  "zenMode.hideLineNumbers": false,
-  "workbench.startupEditor": "none",
-  "workbench.navigationControl.enabled": false,
+
+  // ============================================================
+  // 🧱 WORKBENCH TREE & LAYOUT
+  // ============================================================
+  "workbench.tree.indent": 10,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.enableStickyScroll": false,
+
+  // ============================================================
+  // 💬 TERMINAL SETTINGS
+  // ============================================================
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeightBold": "bold",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.stickyScroll.enabled": false,
+
+  // ============================================================
+  // ⚙️ FILE HANDLING
+  // ============================================================
   "files.insertFinalNewline": true,
-  // ================================
-  // ======= EDITOR BEHAVIOR ========
-  // ================================
-  "editor.linkedEditing": true,
-  "files.autoSave": "afterDelay",
-  "editor.formatOnSave": true,
-  "terminal.integrated.commandsToSkipShell": ["workbench.action.closePanel"],
-  "telemetry.telemetryLevel": "off",
-  "telemetry.feedback.enabled": false,
-  "better-comments.highlightPlainText": true,
-  "better-comments.multilineComments": true,
-  "chat.commandCenter.enabled": false,
-  "chat.agent.enabled": false,
-  "inlineChat.lineNaturalLanguageHint": false,
-  "editor.accessibilitySupport": "off",
-  "security.workspace.trust.emptyWindow": false,
-  "security.workspace.trust.banner": "never",
-  "security.workspace.trust.untrustedFiles": "open",
-  "security.workspace.trust.startupPrompt": "never",
-  "security.workspace.trust.enabled": false,
-  "git.openRepositoryInParentFolders": "always",
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "git.autoStash": true,
-  "git.autofetch": true,
-  "explorer.compactFolders": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmPasteNative": false,
-  "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "workbench.editorAssociations": {
-    "git-rebase-todo": "default"
-  },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+
+  // ============================================================
+  // 🚫 AI & CHAT FEATURES
+  // ============================================================
+  "chat.disableAIFeatures": true,
+
+  // ============================================================
+  // 🚫 ERROR LENS
+  // ============================================================
+  "errorLens.enabled": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.codeLensEnabled": true,
+
+  // ============================================================
+  // 🚫 BETTER COMMENTS
+  // ============================================================
+  "better-comments.multilineComments": true
 }
