@@ -312,12 +312,6 @@
   // ======= FILE OPS ========
   // =========================
 
-  // Open new file from menu (Ctrl + Alt + N)
-  {
-    "key": "ctrl+alt+n",
-    "command": "welcome.showNewFileEntries"
-  },
-
   // Open new untitled file (Alt + N)
   {
     "key": "alt+n",
@@ -330,11 +324,6 @@
     "command": "workbench.action.closeActiveEditor"
   },
 
-  // Quick open (Alt + G)
-  {
-    "key": "alt+g",
-    "command": "workbench.action.quickOpen"
-  },
 
   // Run and stop code runner
   {
