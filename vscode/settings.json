@@ -62,7 +62,7 @@
   // ============================================================
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "explorer.confirmDelete": false,
+  "explorer.confirmDelete": true,
   "explorer.compactFolders": false,
   "breadcrumbs.enabled": false,
   "breadcrumbs.filePath": "off",
