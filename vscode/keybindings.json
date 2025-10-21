@@ -1,140 +1,146 @@
 // Place your key bindings in this file to override the defaults
+// =============================
+// VS Code Keybindings for Vim
+// =============================
+// File: keybindings.json (JSONC format supports comments)
+
 [
   // =============================
   // ======= LEADER BINDS ========
   // =============================
+
+  // Git view (Space + g g)
   {
-    "key": "space w", // [W]rite current file,
-    "command": "workbench.action.files.save",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space g g", // [G] [G]it
+    "key": "space g g",
     "command": "runCommands",
-    "args": {
-      "commands": ["workbench.view.scm", "workbench.scm.focus"]
-    },
+    "args": { "commands": ["workbench.view.scm", "workbench.scm.focus"] },
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+
+  // Apply code actions / quick fixes (Space + c a)
   {
-    "key": "space q", // [Q]uit & save
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.files.save",
-        "workbench.action.closeActiveEditor"
-      ]
-    },
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space c a", // [C]ode [A]ction
+    "key": "space c a",
     "command": "editor.action.codeAction",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Rename symbol (Space + r n)
   {
-    "key": "space r n", // [R]e[n]ame
+    "key": "space r n",
     "command": "editor.action.rename",
     "when": "vim.mode == 'Normal' && editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
+
+  // Go to symbol in file (Space + g s)
   {
-    "key": "space g s", // [G]o to [S]ymbol
+    "key": "space g s",
     "command": "workbench.action.gotoSymbol",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Quick open file (Space + f f)
   {
-    "key": "space f f", // [F]ind [F]ile
+    "key": "space f f",
     "command": "workbench.action.quickOpen",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+
+  // Global search (Space + f g)
   {
-    "key": "space f g", // [F]ind [G]rep,
+    "key": "space f g",
     "command": "workbench.action.findInFiles",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+
+  // Go to definition (Space + g d)
   {
-    "key": "space g d", // [G]o to [D]efinition
+    "key": "space g d",
     "command": "editor.action.revealDefinition",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Go to references (Space + g r)
   {
-    "key": "space g r", // [G]o to [R]eferences
+    "key": "space g r",
     "command": "editor.action.goToReferences",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Go to implementation (Space + g i)
   {
-    "key": "space g i", // [G]o to [I]mplementation
+    "key": "space g i",
     "command": "editor.action.goToImplementation",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Go to previous diagnostic ( [ d )
   {
-    "key": "[ d", // Prev diagnostics
+    "key": "[ d",
     "command": "editor.action.marker.prev",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Go to next diagnostic ( ] d )
   {
-    "key": "] d", // Next diagnostics
+    "key": "] d",
     "command": "editor.action.marker.next",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Show documentation hover (Shift + K)
   {
-    "key": "space s", // [S]plit [S]ide
-    "command": "workbench.action.splitEditorRight",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space v", // Split [V]ertically
-    "command": "workbench.action.splitEditorDown",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "shift-k", // vim classic. Why not just "gh" instead? Idk.
+    "key": "shift+k",
     "command": "editor.action.showHover",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
 
   // ================================
-  // ======= PANE MANAGEMENT ========
+  // ======= WINDOW / PANE ==========
   // ================================
+
+  // Move focus between editor panes (like Vim window nav)
+  { "key": "ctrl+h", "command": "workbench.action.navigateLeft" },
+  { "key": "ctrl+j", "command": "workbench.action.navigateDown" },
+  { "key": "ctrl+k", "command": "workbench.action.navigateUp" },
+  { "key": "ctrl+l", "command": "workbench.action.navigateRight" },
+
+  // Split editor vertically (Space + s)
   {
-    "key": "ctrl-h",
-    "command": "workbench.action.navigateLeft"
+    "key": "space s",
+    "command": "workbench.action.splitEditorRight",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+
+  // Split editor horizontally (Space + v)
   {
-    "key": "ctrl-l",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "ctrl-k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl-j",
-    "command": "workbench.action.navigateDown"
+    "key": "space v",
+    "command": "workbench.action.splitEditorDown",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },
 
   // ========================
   // ======= BUFFERS ========
   // ========================
+
+  // Next editor tab (Tab)
   {
     "key": "tab",
     "command": "workbench.action.nextEditorInGroup",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
+
+  // Previous editor tab (Shift + Tab)
   {
-    "key": "shift-tab",
+    "key": "shift+tab",
     "command": "workbench.action.previousEditorInGroup",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space t", // Close o[T]her editors
-    "command": "workbench.action.closeOtherEditors",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
 
   // ==========================
   // ======= FILE TREE ========
   // ==========================
+
+  // Toggle and focus file explorer (Space + e)
   {
     "key": "space e",
     "command": "runCommands",
@@ -146,6 +152,8 @@
     },
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
   },
+
+  // Hide sidebar and return focus to editor (Space + e again)
   {
     "key": "space e",
     "command": "runCommands",
@@ -157,162 +165,134 @@
     },
     "when": "sideBarFocus && !inputFocus"
   },
-  {
-    "key": "space e",
-    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
+
+  // --- Explorer shortcuts ---
   {
     "key": "r",
     "command": "renameFile",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
     "key": "c",
     "command": "filesExplorer.copy",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "p",
     "command": "filesExplorer.paste",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "x",
     "command": "filesExplorer.cut",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "d",
     "command": "deleteFile",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "a",
     "command": "explorer.newFile",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift-a",
+    "key": "shift+a",
     "command": "explorer.newFolder",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "s",
     "command": "explorer.openToSide",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
-  {
-    "key": "shift-s",
-    "command": "runCommands",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
-    "args": {
-      "commands": [
-        "workbench.action.splitEditorDown",
-        "explorer.openAndPassFocus",
-        "workbench.action.closeOtherEditors"
-      ]
-    }
-  },
+
+  // Open file or toggle folder with Enter
   {
     "key": "enter",
     "command": "explorer.openAndPassFocus",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+    "when": "filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   },
   {
     "key": "enter",
     "command": "list.toggleExpand",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "when": "filesExplorerFocus && explorerResourceIsFolder && !inputFocus"
   },
 
   // =========================
   // ======= TERMINAL ========
   // =========================
-  {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.togglePanel"
-  },
+
+  // Toggle terminal panel visibility (Ctrl + Shift + T)
+  { "key": "ctrl+shift+t", "command": "workbench.action.togglePanel" },
+
+  // Focus next terminal (Ctrl + Shift + B)
   {
     "key": "ctrl+shift+b",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
+
+  // Focus previous terminal (Ctrl + Shift + A)
   {
     "key": "ctrl+shift+a",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
+
+  // New terminal (Ctrl + Shift + N)
   {
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
+
+  // Kill terminal (Ctrl + Shift + Q)
   {
     "key": "ctrl+shift+q",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
 
-  // =======================
-  // ======= EDITOR ========
-  // =======================
+  // Open terminal in editor (Ctrl + \)
+  { "key": "ctrl+\\", "command": "workbench.action.createTerminalEditor" },
+
+  // Open terminal to the side (Ctrl + ')
+  { "key": "ctrl+'", "command": "workbench.action.createTerminalEditorSide" },
+
+  // =========================
+  // ======= AUTOCOMPLETE =====
+  // =========================
+
+  // Navigate autocomplete suggestions with Tab / Shift+Tab
   {
     "key": "tab",
     "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
-    "key": "down",
-    "command": "-selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
-    "key": "tab",
-    "command": "-acceptSelectedSuggestion",
-    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
   },
   {
     "key": "shift+tab",
     "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
   },
-  {
-    "key": "up",
-    "command": "-selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
+
+  // Navigate quick input lists (file pickers, etc.)
   {
     "key": "tab",
     "command": "quickInput.next",
     "when": "inQuickInput && quickInputType == 'quickPick'"
   },
   {
-    /** 
-        Doesn't work at the moment.
-        Accessibility keybinds with "shift" when quickInput is open causes interference with keybinds.
-        Will try to create PR to vscode if not resolved soon. https://github.com/microsoft/vscode/issues/180862
-      */
     "key": "shift+tab",
     "command": "quickInput.previous",
     "when": "inQuickInput && quickInputType == 'quickPick'"
   },
-  {
-    "key": "escape",
-    "command": "closeMarkersNavigation",
-    "when": "editorFocus && markersNavigationVisible"
-  },
+
+  // Navigate code action menu
   {
     "key": "tab",
     "command": "selectNextCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-  {
-    "key": "down",
-    "command": "-selectNextCodeAction",
     "when": "codeActionMenuVisible"
   },
   {
@@ -320,107 +300,49 @@
     "command": "selectPrevCodeAction",
     "when": "codeActionMenuVisible"
   },
-  {
-    "key": "up",
-    "command": "-selectPrevCodeAction",
-    "when": "codeActionMenuVisible"
-  },
-  {
-    "key": "alt+n",
-    "command": "-workbench.action.files.newUntitledFile"
-  },
 
-  // ========================
-  // ======= HARPOON ========
-  // ========================
-  {
-    "key": "space a", // [A]dd harpoon
-    "command": "vscode-harpoon.addEditor",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space h", // Open [H]arpoon file
-    "command": "vscode-harpoon.editEditors",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space p",
-    "command": "vscode-harpoon.editorQuickPick",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space 1",
-    "command": "vscode-harpoon.gotoEditor1",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space 2",
-    "command": "vscode-harpoon.gotoEditor2",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space 3",
-    "command": "vscode-harpoon.gotoEditor3",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space 4",
-    "command": "vscode-harpoon.gotoEditor4",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space 5",
-    "command": "vscode-harpoon.gotoEditor5",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "alt+i",
-    "command": "composerMode.agent"
-  },
-
-  // Ensure that tab button works in vim.
-  // {
-  //   "key": "tab",
-  //   "command": "tab",
-  //   "when": "editorTextFocus && !editorTabMovesFocus"
-  // },
-  // {
-  //   "key": "shift+tab",
-  //   "command": "outdent",
-  //   "when": "editorTextFocus && !editorTabMovesFocus"
-  // },
-
-  // =======================
-  // ======= CURSOR ========
-  // =======================
+  // Close marker navigation (Escape)
   {
     "key": "escape",
-    "command": "composer.closeComposerTab",
-    "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
-  },
-  {
-    "key": "alt+escape",
-    "command": "-claude-code.runClaude.keyboard"
+    "command": "closeMarkersNavigation",
+    "when": "editorFocus && markersNavigationVisible"
   },
 
-  // =======================
-  // ======= Aditional ========
-  // =======================
+  // =========================
+  // ======= FILE OPS ========
+  // =========================
 
-  {
-    "key": "ctrl+\\ \\",
-    "command": "workbench.action.createTerminalEditor"
-  },
-  {
-    "key": "ctrl+'",
-    "command": "workbench.action.createTerminalEditorSide"
-  },
+  // Open new file from menu (Ctrl + Alt + N)
   {
     "key": "ctrl+alt+n",
     "command": "welcome.showNewFileEntries"
   },
+
+  // Open new untitled file (Alt + N)
+  {
+    "key": "alt+n",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+
+  // Close active file (Alt + X)
+  {
+    "key": "alt+x",
+    "command": "workbench.action.closeActiveEditor"
+  },
+
+  // Quick open (Alt + G)
   {
     "key": "alt+g",
     "command": "workbench.action.quickOpen"
+  },
+
+  // Run and stop code runner
+  {
+    "key": "alt+r",
+    "command": "code-runner.run"
+  },
+  {
+    "key": "alt+s",
+    "command": "code-runner.stop"
   }
 ]
