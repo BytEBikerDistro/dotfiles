@@ -2,7 +2,6 @@
 // =============================
 // VS Code Keybindings for Vim
 // =============================
-// File: keybindings.json (JSONC format supports comments)
 
 [
   // =============================
@@ -45,7 +44,7 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
 
-  // Open command pallete (Space + f c)
+  // Open command pallette (Space + f c)
   {
     "key": "space f c",
     "command": "workbench.action.showCommands",
@@ -122,6 +121,20 @@
   {
     "key": "space v",
     "command": "workbench.action.splitEditorDown",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+
+  // Open new buffer (Space + n)
+  {
+    "key": "space n",
+    "command": "workbench.action.files.newUntitledFile",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+
+  // Close buffers & splits (Space + x)
+  {
+    "key": "space x",
+    "command": "workbench.action.closeActiveEditor",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
 
@@ -318,18 +331,6 @@
   // =========================
   // ======= FILE OPS ========
   // =========================
-
-  // Open new untitled file (Alt + N)
-  {
-    "key": "alt+n",
-    "command": "workbench.action.files.newUntitledFile"
-  },
-
-  // Close active file (Alt + X)
-  {
-    "key": "alt+x",
-    "command": "workbench.action.closeActiveEditor"
-  },
 
   // Run and stop code runner
   {
