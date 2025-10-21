@@ -99,6 +99,7 @@
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
   "editor.cursorBlinking": "smooth",
+  "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "editor.minimap.enabled": false,
   "editor.hover.sticky": false,
