@@ -45,6 +45,13 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
 
+  // Open command pallete (Space + f c)
+  {
+    "key": "space f c",
+    "command": "workbench.action.showCommands",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+
   // Global search (Space + f g)
   {
     "key": "space f g",
@@ -323,7 +330,6 @@
     "key": "alt+x",
     "command": "workbench.action.closeActiveEditor"
   },
-
 
   // Run and stop code runner
   {
