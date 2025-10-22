@@ -47,10 +47,10 @@
   // 🖌️ APPEARANCE & UI
   // ============================================================
   "window.zoomLevel": 2,
-  "window.menuBarVisibility": "compact",
   "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
   "workbench.navigationControl.enabled": false,
   "workbench.tips.enabled": false,
   "workbench.layoutControl.enabled": false,
