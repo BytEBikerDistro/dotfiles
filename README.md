@@ -53,7 +53,7 @@ apt install -y gnome-themes-extra xfce4 xfce4-terminal xfce4-appfinder xfce4-bat
 #### debian dependencies
 
 ```bash
-sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog evince eza file findutils fzf git gnome-keyring gnome-keysign grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 python3-pip ripgrep sed tar unace unrar-free unzip uuid-runtime neovim xz-utils xdg-utils zellij zoxide zsh zstd
+sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog evince eza file findutils fzf git gnome-keyring gnome-keysign grep gzip imagemagick jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 python3-pip ripgrep sed tar unace unrar-free unzip uuid-runtime neovim xz-utils xdg-utils zoxide zsh zstd
 ```
 
 #### install libreoffice in debian
