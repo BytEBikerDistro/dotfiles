@@ -15,8 +15,8 @@
   "editor.inlayHints.fontFamily": "FiraCode Nerd Font",
 
   // FONT SIZfalseE
-  "editor.fontSize": 20,
-  "terminal.integrated.fontSize": 20,
+  "editor.fontSize": 15,
+  "terminal.integrated.fontSize": 15,
   "workbench.startupEditor": "none",
   "workbench.navigationControl.enabled": false,
   "workbench.tips.enabled": false,
@@ -125,6 +125,7 @@
   "window.zoomLevel": 1,
   "workbench.tree.indent": 10,
   "window.menuBarVisibility": "compact",
+		"workbench.activityBar.location": "hidden"
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.enableStickyScroll": false,
   "files.insertFinalNewline": true,
@@ -1118,5 +1119,5 @@
       "command": "workbench.action.toggleZenMode"
     }
   ],
-  "workbench.activityBar.location": "hidden"
+  
 }
