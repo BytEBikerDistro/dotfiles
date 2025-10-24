@@ -14,7 +14,7 @@
   "markdown.preview.fontFamily": "FiraCode Nerd Font",
   "editor.inlayHints.fontFamily": "FiraCode Nerd Font",
 
-  // FONT SIZfalseE
+  // FONT SIZE
   "editor.fontSize": 15,
   "terminal.integrated.fontSize": 15,
   "workbench.startupEditor": "none",
