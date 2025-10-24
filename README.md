@@ -40,13 +40,13 @@ bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/ne
 ##### basic base
 
 ```bash
-apt install -y xfce4 xfce4-appfinder xfce4-whiskermenu-plugin ristretto xfce4-pulseaudio-plugin firefox
+apt install -y xfce4 xfce4-terminal xfce4-appfinder xfce4-whiskermenu-plugin ristretto xfce4-pulseaudio-plugin firefox
 ```
 
 ##### with some useful plugins
 
 ```bash
-apt install -y xfce4 xfce4-appfinder xfce4-battery-plugin xfce4-clipman-plugin xfce4-screenshooter xfce4-whiskermenu-plugin ristretto xfce4-notifyd xfce4-pulseaudio-plugin firefox
+apt install -y xfce4 xfce4-terminal xfce4-appfinder xfce4-battery-plugin xfce4-clipman-plugin xfce4-screenshooter xfce4-whiskermenu-plugin ristretto xfce4-notifyd xfce4-pulseaudio-plugin firefox
 ```
 
 
