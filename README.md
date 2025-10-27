@@ -20,7 +20,7 @@ termux-setup-storage
 #### termux dependencies
 
 ```bash
-apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-editor diffutils dialog evince eza fd file findutils fzf git grep gzip jq less lhasa lzip lzop make nala ncompress nodejs openssh openssl p7zip procps python python-pip ripgrep sed tar tmux unrar unzip uuid-utils neovim xz-utils zoxide zsh zstd
+apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-editor diffutils dialog evince eza fd file findutils fzf git grep gzip jq less lhasa lzip lzop make nala ncompress nodejs openssh openssl p7zip procps python python-pip ranger ripgrep sed tar tmux unrar unzip uuid-utils neovim xz-utils zoxide zsh zstd
 ```
 
 #### install gogh color schemes
@@ -53,7 +53,7 @@ apt install -y gnome-themes-extra xfce4 xfce4-terminal xfce4-appfinder xfce4-bat
 #### debian dependencies
 
 ```bash
-sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog evince eza file findutils fzf git gnome-keyring gnome-keysign grep gzip jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 python3-pip ripgrep sed tar tmux unace unrar-free unzip uuid-runtime neovim xz-utils xdg-utils zoxide zsh zstd
+sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog evince eza file findutils fzf git gnome-keyring gnome-keysign grep gzip jq less lhasa lzip lzop nala ncompress nodejs openssl p7zip procps python3 python3-pip ranger ripgrep sed tar tmux unace unrar-free unzip uuid-runtime neovim xz-utils xdg-utils zoxide zsh zstd
 ```
 
 #### install libreoffice in debian
