@@ -1,5 +1,6 @@
 # Zoxide as cd
 eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd bash)"
 
 # FZF color scheme (TokyoNight theme)
 export FZF_DEFAULT_OPTS=" --color=bg:#1a1b26,bg+:#24283b,spinner:#bb9af7,hl:#f7768e --color=fg:#c0caf5,header:#7aa2f7,info:#7dcfff,pointer:#7aa2f7 --color=marker:#9ece6a,fg+:#a9b1d6,prompt:#e0af68,hl+:#ff7aa1 --color=selected-bg:#414868 --color=border:#565f89,label:#c0caf5"
