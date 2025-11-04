@@ -4,6 +4,7 @@
 alias q="exit"
 alias c="clear"
 alias h='~'
+alias r='ranger'
 alias f="find . | grep -i "
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
@@ -311,4 +312,3 @@ checksum() {
     echo "  SHA1:   $(sha1sum "$file" | cut -d' ' -f1)"
     echo "  SHA256: $(sha256sum "$file" | cut -d' ' -f1)"
 }
-
