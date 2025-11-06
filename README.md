@@ -52,7 +52,7 @@ apt install -y gnome-themes-extra xfce4 xfce4-terminal xfce4-appfinder xfce4-bat
 #### install i3WM
 
 ```bash
-apt install -y alacritty i3 nitrogen picom polybar rofi feh
+apt install -y alacritty i3 nitrogen picom polybar pulseaudio rofi feh
 ```
 
 #### debian dependencies
