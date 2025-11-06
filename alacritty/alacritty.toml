@@ -1,0 +1,101 @@
+# ===========================================
+# TokyoNight Storm Alacritty Configuration
+# ===========================================
+
+[env]
+TERM = "xterm-256color"
+COLORTERM = "truecolor"
+
+[window]
+opacity = 0.9
+padding = { x = 6, y = 6 }
+decorations = "none"
+dynamic_padding = true
+startup_mode = "Windowed"
+blur = true
+
+# Rounded corners (supported on some compositors like Picom)
+option_as_alt = "Both"
+
+[font]
+size = 15.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+# [font.bold]
+# family = "FiraCode Nerd Font"
+# style = "Bold"
+#
+# [font.italic]
+# family = "FiraCode Nerd Font"
+# style = "Italic"
+#
+# [font.bold_italic]
+# family = "FiraCode Nerd Font"
+# style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+unfocused_hollow = true
+
+# TokyoNight Storm Color Palette
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.normal]
+black   = "#15161e"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[colors.bright]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+
+[colors.cursor]
+cursor = "#9ece6a"
+text = "#1a1b26"
+
+[colors.selection]
+background = "#33467C"
+text = "#c0caf5"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+# ===========================================
+# Shell Configuration — Auto Launch tmux.sh
+# ===========================================
+[terminal.shell]
+program = "/usr/bin/env"
+args = ["zsh", "-i", "-c", "~/.local/bin/tmux.sh"]
+
+# ===========================================
+# Keybindings
+# ===========================================
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+  { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" }
+]
+
+[terminal]
+
