@@ -1,0 +1,146 @@
+
+/*
+ * Tokyonight Storm colorscheme (big icons) for rofi
+ */
+
+* {
+    /* TokyoNight Storm Palette */
+    bg: #24283b;               /* background */
+    hv: #2ac3de;               /* highlight / selected */
+    primary: #c0caf5;          /* text / main foreground */
+    ug: #1a1b26;               /* ultra dark background */
+    font: "FiraCode Nerd Font Bold 15"; 
+    black: #000000;
+    kl: #7aa2f7;               /* accent (blue) */
+    accent: #9ece6a;           /* secondary accent (green) */
+    transparent: rgba(46,52,64,0);
+
+    background-color: @bg;
+    border: 0px;
+}
+
+/* WINDOW */
+window {
+    width: 700;
+    orientation: horizontal;
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    border-color: @transparent;
+    border: 0px;
+    border-radius: 8px;
+    spacing: 0;
+    children: [ mainbox ];
+    background-color: @bg;
+}
+
+/* MAIN CONTAINER */
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+/* SEARCH BAR */
+inputbar {
+    color: @accent;
+    padding: 11px;
+    border: 2px;
+    border-color: @kl;
+    border-radius: 8px 8px 0px 0px;
+    background-color: @ug;
+}
+
+/* MESSAGE BAR */
+message {
+    padding: 4px;
+    border: 0px 1px 1px 1px;
+    border-color: @kl;
+    background-color: @ug;
+}
+
+/* ENTRY / PROMPT */
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
+
+entry {
+    cursor: pointer;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+}
+
+/* LIST VIEW */
+listview {
+    layout: vertical;
+    padding: 8px;
+    lines: 7;
+    columns: 1;
+    border: 0px 2px 2px 2px; 
+    border-radius: 0px 0px 8px 8px;
+    border-color: @kl;
+    dynamic: false;
+    background-color: @ug;
+}
+
+/* ELEMENTS (APP ENTRIES) */
+element {
+    padding: 4px 6px;
+    vertical-align: 1;
+    color: @primary;
+    font: inherit;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element selected.normal {
+    color: @bg;
+    background-color: @hv;
+}
+
+element normal active {
+    background-color: @hv;
+    color: @bg;
+}
+
+element normal urgent {
+    background-color: #f7768e; /* pinkish red */
+    color: @bg;
+}
+
+element selected active {
+    background-color: @hv;
+    color: @ug;
+}
+
+/* ICONS */
+element-icon {
+    background-color: inherit;
+    text-color: inherit;
+    size: 2.5em;
+}
+
+/* BUTTONS */
+button {
+    padding: 6px;
+    color: @primary;
+    horizontal-align: 0.5;
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    border-color: @kl;
+    background-color: @ug;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @accent;
+    background-color: @hv;
+    color: @bg;
+}
