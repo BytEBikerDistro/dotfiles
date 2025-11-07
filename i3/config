@@ -10,9 +10,6 @@ font pango:FiraCode Nerd Font Bold 15
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# Startup apps
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
-
 # Start a terminal
 bindsym $mod+Return exec alacritty
 
