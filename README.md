@@ -52,13 +52,13 @@ apt install -y gnome-themes-extra xfce4 xfce4-terminal xfce4-appfinder xfce4-bat
 #### install i3WM
 
 ```bash
-apt install -y alacritty i3 nitrogen picom polybar pulseaudio rofi feh
+apt install -y alacritty i3 nitrogen pcmanfm lxappearance pulseaudio rofi feh
 ```
 
 #### debian dependencies
 
 ```bash
-sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog evince eza file findutils fzf git gnome-keyring grep gzip jq less lhasa lzip lzop nala ncompress neovim openssl p7zip procps python3 python3-pip ranger ripgrep sed tar tmux ueberzug unace unrar-free unzip uuid-runtime xz-utils xdg-utils zoxide zsh zstd
+sudo apt install -y arj bat binutils bzip2 cabextract coreutils cpio curl dconf-cli diffutils dialog evince eza file findutils fzf git gnome-keyring grep gzip jq less lhasa lzip lzop nala ncompress neovim openssl p7zip procps python3 python3-pip ranger ripgrep screen sed tar tmux ueberzug unace unrar-free unzip uuid-runtime xz-utils xdg-utils zoxide zsh zstd
 ```
 
 #### install libreoffice in debian
