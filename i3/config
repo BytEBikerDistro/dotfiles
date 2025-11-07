@@ -10,6 +10,9 @@ font pango:FiraCode Nerd Font Bold 15
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+# Startup apps
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 # Start a terminal
 bindsym $mod+Return exec alacritty
 
@@ -17,7 +20,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start dmenu (app launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun
+# bindsym $mod+d exec dmenu_run
 
 # Change focus with arrow keys
 bindsym $mod+Left focus left
@@ -75,6 +79,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
+set $ws9 "9"
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -85,6 +90,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -95,6 +101,7 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -125,6 +132,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bar {
+    position top
+	status_command $HOME/bumblebee-status/bumblebee-status \
+		-m date pasink hostname \
+		-p date.format="%a, %b. %d %Y" \
+		-t dracula-powerline
+    colors {
+         background #16161e
+         statusline #c0caf5
+         separator  #565f89
+         focused_workspace  #9ece6a #9ece6a #1a1b26
+         active_workspace   #24283b #24283b #c0caf5
+         inactive_workspace #1f2335 #1f2335 #a9b1d6
+         urgent_workspace   #f7768e #f7768e #1a1b26
+    }
+}
+
 # Keybindings
 bindsym $mod+Shift+f exec firefox-esr
 bindsym $mod+Shift+t exec thunar
@@ -135,7 +159,7 @@ exec --no-startup-id nitrogen --restore
 
 # Theme colors
 # class                   border    backgr.   text      indicator  child_border
-  client.focused          #9ece6a   #24283b   #c0caf5   #bb9af7    #9ece6a
+  client.focused          #9ece6a   #24283b   #c0caf5   #e0af68    #9ece6a
   client.focused_inactive #1f2335   #1f2335   #565f89   #292e42    #292e42
   client.unfocused        #1f2335   #1f2335   #565f89   #292e42    #292e42
   client.urgent           #f7768e   #24283b   #ffffff   #f7768e    #f7768e
@@ -143,8 +167,13 @@ exec --no-startup-id nitrogen --restore
   client.background       #1a1b26
 
 # Gaps between windows (inner) and screen edges (outer)
-gaps inner 6
-gaps outer 3
+gaps inner 8
+gaps outer 8
+gaps top 8
+
+# Window borders
+for_window [class=".*"] border pixel 3
+for_window [class=".*"] split toggle
 
 # Border style and width
 default_border pixel 2
