@@ -20,8 +20,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start dmenu (app launcher)
-bindsym $mod+d exec rofi -show drun
-# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run
+bindsym $mod+m exec rofi -show drun
 
 # Change focus with arrow keys
 bindsym $mod+Left focus left
