@@ -18,8 +18,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start dmenu (app launcher)
-bindsym $mod+d exec dmenu_run
-bindsym $mod+m exec rofi -show drun
+# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun
 
 # Change focus with arrow keys
 bindsym $mod+Left focus left
@@ -169,11 +169,10 @@ gaps inner 8
 gaps outer 8
 gaps top 8
 
-# Window borders
+# Window borders & splits
 for_window [class=".*"] border pixel 2
-
-# i3 autotiling
-exec_always --no-startup-id i3-msg split h
 for_window [class=".*"] split toggle
+
+
 
 
