@@ -107,7 +107,7 @@ for i in groups:
 layout_conf = {
     "border_focus": colors["green"],
     "border_normal": colors["darkgray"],
-    "border_width": 3,
+    "border_width": 2,
     "margin": 8,
 }
 
@@ -132,7 +132,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(scale=0.7, background=colors["bg_alt"]),
+                widget.CurrentLayoutIcon(background=colors["bg_alt"]),
                 widget.GroupBox(
                     highlight_method='line',
                     active=colors["fg"],
@@ -145,9 +145,8 @@ screens = [
                     padding_x=6,
                     padding_y=3,
                 ),
-                widget.Spacer(length=10),
                 widget.Prompt(prompt="Run: "),
-                widget.Spacer(),
+                widget.WindowName(),
                 widget.Clock(
                     format="%a. %b. %d, %Y",
                     background=colors["bg_alt"],
