@@ -134,7 +134,7 @@ bar {
     position top
 	status_command $HOME/.config/i3/bumblebee-status/bumblebee-status \
 		-m hostname date \
-		-p date.format="%a, %b. %d %Y" \
+		-p date.format="%a. %b. %d, %Y" \
 		-t default
     colors {
          background #16161e
