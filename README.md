@@ -55,6 +55,12 @@ apt install -y gnome-themes-extra xfce4 xfce4-terminal xfce4-appfinder xfce4-bat
 apt install -y alacritty i3 nitrogen thunar lxappearance pulseaudio rofi ristretto
 ```
 
+#### install qtile
+
+```bash
+apt install -y alacritty qtile nitrogen thunar lxappearance pulseaudio rofi ristretto
+```
+
 #### debian dependencies
 
 ```bash
