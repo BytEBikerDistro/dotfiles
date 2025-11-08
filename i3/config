@@ -1,5 +1,4 @@
 # ~/.config/i3/config
-# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/i3
 # i3 config for Hacker's Keyboard on Phone
 # Mod1 = Alt key
 
@@ -18,7 +17,6 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start dmenu (app launcher)
-# bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show drun
 
 # Change focus with arrow keys
@@ -132,7 +130,8 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
-	status_command $HOME/.config/i3/bumblebee-status/bumblebee-status \
+    padding 1px
+	status_command $HOME/bumblebee-status/bumblebee-status \
 		-m hostname date \
 		-p date.format="%a. %b. %d, %Y" \
 		-t default
@@ -172,7 +171,4 @@ gaps top 8
 # Window borders & splits
 for_window [class=".*"] border pixel 2
 for_window [class=".*"] split toggle
-
-
-
 
