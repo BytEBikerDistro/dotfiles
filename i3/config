@@ -170,10 +170,10 @@ gaps outer 8
 gaps top 8
 
 # Window borders
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
+
+# i3 autotiling
+exec_always --no-startup-id i3-msg split h
 for_window [class=".*"] split toggle
 
-# Border style and width
-default_border pixel 2
-default_floating_border pixel 2
 
