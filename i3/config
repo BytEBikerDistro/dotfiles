@@ -1,4 +1,5 @@
 # ~/.config/i3/config
+# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/i3
 # i3 config for Hacker's Keyboard on Phone
 # Mod1 = Alt key
 
@@ -131,10 +132,10 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
-	status_command $HOME/bumblebee-status/bumblebee-status \
-		-m date pasink hostname \
+	status_command $HOME/.config/i3/bumblebee-status/bumblebee-status \
+		-m hostname date \
 		-p date.format="%a, %b. %d %Y" \
-		-t dracula-powerline
+		-t default
     colors {
          background #16161e
          statusline #c0caf5
