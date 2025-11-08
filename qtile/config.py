@@ -80,8 +80,8 @@ keys = [
     Key([mod, "control"], "Up", lazy.layout.shrink()),
 
     # Layout controls
-    Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod, "shift"], "space", lazy.prev_layout(), desc="Toggle between layouts"),
+    Key([mod], "space", lazy.next_layout(), desc="Next layouts"),
+    Key([mod, "shift"], "space", lazy.prev_layout(), desc="Previous layouts"),
 
     # Restart / reload
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload Qtile"),
@@ -146,8 +146,6 @@ screens = [
                     padding_y=3,
                 ),
                 widget.Spacer(length=10),
-                widget.WindowName(),
-                widget.Spacer(),
                 widget.Prompt(prompt="Run: "),
                 widget.Spacer(),
                 widget.Clock(
