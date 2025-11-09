@@ -1,5 +1,6 @@
 # ~/.config/i3/config
-# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
+# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git 
+# git clone https://github.com/nwg-piotr/autotiling.git
 # i3 config for Hacker's Keyboard on Phone
 # Mod1 = Alt key
 # Mod4 = Meta/Windows key
@@ -8,6 +9,9 @@ set $mod Mod4
 
 # Font for window titles
 font pango:FiraCode Nerd Font Bold 15
+
+# i3-autotiling
+exec_always --no-startup-id $HOME/.config/i3/autotiling/autotiling/main.py
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -174,6 +178,4 @@ gaps top 8
 
 # Window borders & splits
 for_window [class=".*"] border pixel 2
-# exec_always --no-startup-id sh -c 'sleep 1 && i3-msg "split h"'
-for_window [class=".*"] split toggle
 
