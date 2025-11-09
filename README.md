@@ -52,7 +52,7 @@ apt install -y gnome-themes-extra xfce4 xfce4-terminal xfce4-appfinder xfce4-bat
 #### install i3WM
 
 ```bash
-apt install -y alacritty i3 nitrogen thunar lxappearance pulseaudio rofi ristretto
+apt install -y alacritty i3 python3-i3ipc nitrogen thunar lxappearance pulseaudio rofi ristretto
 ```
 
 #### install qtile
