@@ -2,10 +2,13 @@
 # Qtile config matching i3 (TokyoNight Storm + Green Focus)
 # Optimized for Termux + PRoot-Distro (mobile use)
 
-from libqtile import bar, layout, widget, hook
-from libqtile.config import Key, Group, Match, Screen
+import os
+
+import libqtile.resources
+from libqtile import bar, layout, qtile, widget
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-import os, subprocess
+from libqtile.utils import guess_terminal
 
 # -----------------------
 # BASIC SETTINGS
@@ -78,10 +81,15 @@ keys = [
     Key([mod, "control"], "Right", lazy.layout.grow_main()),
     Key([mod, "control"], "Down", lazy.layout.grow()),
     Key([mod, "control"], "Up", lazy.layout.shrink()),
+    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack",),
 
     # Layout controls
     Key([mod], "space", lazy.next_layout(), desc="Next layouts"),
     Key([mod, "shift"], "space", lazy.prev_layout(), desc="Previous layouts"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+
 
     # Restart / reload
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload Qtile"),
@@ -169,6 +177,19 @@ def autostart():
 # -----------------------
 # FLOATING RULES
 # -----------------------
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front()),
+]
+
+dgroups_key_binder = None
+dgroups_app_rules = []  # type: list
+follow_mouse_focus = True
+bring_front_click = False
+floats_kept_above = True
+cursor_warp = False
+
 floating_layout = layout.Floating(
     border_focus=colors["green"],
     border_normal=colors["darkgray"],
@@ -187,5 +208,8 @@ floating_layout = layout.Floating(
 # -----------------------
 auto_fullscreen = True
 focus_on_window_activation = "smart"
+focus_previous_on_window_remove = False
+reconfigure_screens = True
+auto_minimize = True
 wmname = "Qtile"
 
