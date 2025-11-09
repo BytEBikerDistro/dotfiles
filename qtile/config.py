@@ -13,6 +13,7 @@ from libqtile.utils import guess_terminal
 # -----------------------
 # BASIC SETTINGS
 # -----------------------
+# mod = "mod4"  # Meta/Windows Key
 mod = "mod1"  # Alt key as mod
 terminal = "alacritty"
 font_name = "FiraCode Nerd Font Bold"
