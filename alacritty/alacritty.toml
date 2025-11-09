@@ -14,9 +14,6 @@ dynamic_padding = true
 startup_mode = "Windowed"
 blur = true
 
-# Rounded corners (supported on some compositors like Picom)
-option_as_alt = "Both"
-
 [font]
 size = 15.0
 
