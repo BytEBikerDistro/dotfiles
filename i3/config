@@ -1,8 +1,10 @@
 # ~/.config/i3/config
+# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
 # i3 config for Hacker's Keyboard on Phone
 # Mod1 = Alt key
+# Mod4 = Meta/Windows key
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles
 font pango:FiraCode Nerd Font Bold 15
@@ -131,8 +133,8 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     padding 1px
-	status_command $HOME/bumblebee-status/bumblebee-status \
-		-m hostname date \
+	status_command $HOME/.config/i3/bumblebee-status/bumblebee-status \
+		-m date \
 		-p date.format="%a. %b. %d, %Y" \
 		-t default
     colors {
@@ -163,12 +165,15 @@ exec --no-startup-id nitrogen --restore
   client.placeholder      #000000   #1a1b26   #ffffff   #000000
   client.background       #1a1b26
 
+
 # Gaps between windows (inner) and screen edges (outer)
 gaps inner 8
 gaps outer 8
 gaps top 8
+# smart_gaps on
 
 # Window borders & splits
 for_window [class=".*"] border pixel 2
+# exec_always --no-startup-id sh -c 'sleep 1 && i3-msg "split h"'
 for_window [class=".*"] split toggle
 
