@@ -11,7 +11,7 @@ set $mod Mod4
 font pango:FiraCode Nerd Font Bold 15
 
 # i3-autotiling
-exec_always --no-startup-id $HOME/.config/i3/autotiling/autotiling/main.py
+exec_always --no-startup-id /usr/bin/autotiling
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -137,10 +137,10 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     padding 1px
-	status_command $HOME/.config/i3/bumblebee-status/bumblebee-status \
-		-m date \
-		-p date.format="%a. %b. %d, %Y" \
-		-t default
+        status_command /usr/bin/bumblebee-status \
+                -m memory disk date \
+                -p date.format="%a. %b. %d, %Y" \
+                -t default
     colors {
          background #16161e
          statusline #c0caf5
@@ -153,9 +153,11 @@ bar {
 }
 
 # Keybindings
-bindsym $mod+Shift+f exec firefox-esr
-bindsym $mod+Shift+t exec thunar
-bindsym $mod+Shift+b exec brave-browser --no-sandbox
+bindsym $mod+Shift+o exec /home/voidlinux/.local/bin/obsidian --no-sandbox 
+bindsym $mod+Shift+v exec /usr/share/code/code --no-sandbox
+bindsym $mod+Shift+b exec /usr/bin/brave-browser-stable --no-sandbox
+bindsym $mod+Shift+f exec pcmanfm
+bindsym $mod+Shift+t exec lxterminal
 
 # Nitrogen for wallpaper
 exec --no-startup-id nitrogen --restore
@@ -174,7 +176,7 @@ exec --no-startup-id nitrogen --restore
 gaps inner 8
 gaps outer 8
 gaps top 8
-# smart_gaps on
+smart_gaps on
 
 # Window borders & splits
 for_window [class=".*"] border pixel 2
