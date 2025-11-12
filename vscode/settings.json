@@ -125,7 +125,7 @@
   "window.zoomLevel": 1,
   "workbench.tree.indent": 10,
   "window.menuBarVisibility": "compact",
-	"workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "hidden",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.enableStickyScroll": false,
   "files.insertFinalNewline": true,
@@ -133,8 +133,7 @@
   "chat.commandCenter.enabled": false,
   "chat.disableAIFeatures": true,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-
-
+  "workbench.panel.defaultLocation": "right",
 
   // EXTENSIONS
   "errorLens.enabled": true,
@@ -143,7 +142,7 @@
   "better-comments.multilineComments": true,
 
   // Neovim
-  "vscode-neovim.neovimExecutablePaths.linux": "/data/data/com.termux/files/usr/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -1124,5 +1123,5 @@
       "command": "workbench.action.toggleZenMode"
     }
   ],
-  
+  "workbench.editor.empty.hint": "hidden"
 }
