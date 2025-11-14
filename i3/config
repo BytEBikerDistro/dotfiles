@@ -137,10 +137,11 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     padding 1px
+    font pango:FiraCode Nerd Font Bold 10
         status_command /usr/bin/bumblebee-status \
-                -m memory disk date \
+                -m title memory disk date \
                 -p date.format="%a. %b. %d, %Y" \
-                -t default
+                -t tokyonight-storm
     colors {
          background #16161e
          statusline #c0caf5
